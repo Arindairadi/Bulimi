@@ -1,0 +1,5 @@
+-verbose
+-keep class io.flutter.** { *; }
+-keep class io.flutter.plugins.** { *; }
+-keepattributes *Annotation*
+-renamesourcefileattribute SourceFile
