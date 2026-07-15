@@ -9,21 +9,7 @@ pluginManagement {
 plugins {
     id "com.android.application" version "7.3.0" apply false
     id "com.android.library" version "7.3.0" apply false
+    id "dev.flutter.flutter-gradle-plugin" apply false
 }
 
 include ':app'
-
-def localProperties = new Properties()
-def localPropertiesFile = file('local.properties')
-if (localPropertiesFile.exists()) {
-    localProperties.load(localPropertiesFile.newInputStream())
-}
-
-def flutterSdkPath = localProperties.getProperty('flutter.sdk')
-if (flutterSdkPath == null) {
-    flutterSdkPath = System.getenv('FLUTTER_SDK')
-}
-
-if (flutterSdkPath != null) {
-    apply from: "$flutterSdkPath/packages/flutter_tools/gradle/app_plugin_loader.gradle"
-}
